@@ -5,11 +5,15 @@ package GPACalculator.frames;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+import GPACalculator.classMenu;
+import GPACalculator.semesterMenu;
+import GPACalculator.studentMenu;
 import GPACalculator.classpanel.ClassPanel;
 import GPACalculator.semesterpanel.SemesterPanel;
 import GPACalculator.studentpanel.StudentPanel;
@@ -25,9 +29,11 @@ public class MainFrame extends JFrame {
 		frame = new JFrame("GPA Calculator");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Font f = new Font("serif", Font.PLAIN, 36);
+		frame.setFont(f);
 		Container c = frame.getContentPane();
 		// adjust to need.
-		Dimension d = new Dimension(1500, 800);
+		Dimension d = new Dimension(2250, 1200);
 		c.setPreferredSize(d);
 		
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/icon.png")));
@@ -41,6 +47,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void showWelcomePanel(){
+		frame.setTitle("GPA Calculator - Welcome Panel");
 		 frame.add(new WelcomePanel(), BorderLayout.NORTH);
 		 frame.pack();
 		 frame.setVisible(true);
@@ -48,6 +55,8 @@ public class MainFrame extends JFrame {
 	
 	public static void showStudentPanel(){
 		frame.getContentPane().removeAll();
+		frame.setTitle("GPA Calculator - Student Panel");
+		frame.setJMenuBar(new studentMenu());
 		frame.add(new StudentPanel(), BorderLayout.NORTH);
 		frame.pack();
 		frame.setVisible(true);
@@ -57,6 +66,8 @@ public class MainFrame extends JFrame {
 		String s = new String();
 		s = "Semester 1";
 		frame.getContentPane().removeAll();
+		frame.setTitle("GPA Calculator - Semester Panel");
+		frame.setJMenuBar(new semesterMenu(s));
 		frame.add(new SemesterPanel(s), BorderLayout.NORTH);
 		frame.pack();
 		frame.setVisible(true);
@@ -66,6 +77,8 @@ public class MainFrame extends JFrame {
 		String s = new String();
 		s = "Class 1";
 		frame.getContentPane().removeAll();
+		frame.setTitle("GPA Calculator - Class Panel");
+		frame.setJMenuBar(new classMenu());
 		frame.add(new ClassPanel(s), BorderLayout.NORTH);
 		frame.pack();
 		frame.setVisible(true);

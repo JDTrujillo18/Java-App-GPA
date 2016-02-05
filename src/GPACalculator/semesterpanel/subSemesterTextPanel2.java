@@ -25,18 +25,18 @@ import GPACalculator.popups.PopClickListener;
 public class subSemesterTextPanel2 extends JPanel{
 	
 	public subSemesterTextPanel2(String text) {
-		Font f1 = new Font("serif", Font.PLAIN, 36);
-		Font f2 = new Font("serif", Font.PLAIN, 24);
+		Font f1 = new Font("serif", Font.PLAIN, 54);
+		Font f2 = new Font("serif", Font.PLAIN, 36);
 		Border paddingBorder1 = BorderFactory.createEmptyBorder(10, 10, 10, 40);
 		Border paddingBorder2 = BorderFactory.createEmptyBorder(10, 10, 10, 40);
-		Border paddingBorder3 = BorderFactory.createEmptyBorder(10, 0, 10, 755);
+		Border paddingBorder3 = BorderFactory.createEmptyBorder(10, 0, 10, 1015);
 
 		Border paddingBorder5 = BorderFactory.createEmptyBorder(10, 0, 10, 10);
 		Border paddingBorder6 = BorderFactory.createEmptyBorder(10, 450, 10, 0);
-		Dimension d1 = new Dimension(900, 800);
-		Dimension d2 = new Dimension(900, 100);
-		Dimension d3 = new Dimension(900, 600);
-		Dimension d4 = new Dimension(900, 50);
+		Dimension d1 = new Dimension(1350, 1200);
+		Dimension d2 = new Dimension(1350, 150);
+		Dimension d3 = new Dimension(1200, 900);
+		Dimension d4 = new Dimension(1200, 75);
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.setPreferredSize(d1);

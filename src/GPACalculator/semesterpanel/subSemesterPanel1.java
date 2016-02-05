@@ -9,7 +9,7 @@ public class subSemesterPanel1 extends JTabbedPane {
 
 	public subSemesterPanel1(String s) {
 		Font f = new Font("serif", Font.PLAIN, 24);
-		Dimension d1 = new Dimension(400, 800);
+		Dimension d1 = new Dimension(600, 1200);
 		this.setPreferredSize(d1);
 		this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		

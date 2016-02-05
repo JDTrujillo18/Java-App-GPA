@@ -8,7 +8,7 @@ import javax.swing.JTabbedPane;
 public class subSemesterPanel2 extends JTabbedPane {
 	public subSemesterPanel2(String s) {
 		Font f = new Font("serif", Font.PLAIN, 24);
-		Dimension d1 = new Dimension(900, 800);
+		Dimension d1 = new Dimension(1350, 1200);
 		this.setPreferredSize(d1);
 		this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		

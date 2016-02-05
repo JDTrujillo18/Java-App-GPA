@@ -33,10 +33,10 @@ public class SemesterPanel extends JPanel{
 	public SemesterPanel(String s) {
 
 		super(new GridLayout(2, 1));
-		Dimension d1 = new Dimension(400, 800);
-		Dimension d2 = new Dimension(900, 800);
-		Dimension d3 = new Dimension(200, 800);
-		Dimension d4 = new Dimension(1500, 800);
+		Dimension d1 = new Dimension(600, 1200);
+		Dimension d2 = new Dimension(1350, 1200);
+		Dimension d3 = new Dimension(300, 1200);
+		Dimension d4 = new Dimension(2250, 1200);
 
 		tabbedPane1 = new subSemesterPanel1(s);
 		tabbedPane2 = new subSemesterPanel2(s);

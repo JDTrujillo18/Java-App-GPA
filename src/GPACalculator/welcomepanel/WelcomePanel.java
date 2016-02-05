@@ -13,15 +13,16 @@ import GPACalculator.frames.MainFrame;
 public class WelcomePanel extends JPanel {
 
 	public WelcomePanel(){
-		Font f = new Font("serif", Font.PLAIN, 24);
-		
+		Font f = new Font("serif", Font.PLAIN, 36);
+		Font f2 = new Font("serif", Font.PLAIN, 48);
 		//Initialize tabbed pane
 		//tabbedPane = new JTabbedPane();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		//Set tabbed pane font
 		this.setFont(f);
 		JButton btn1 = new JButton();
-		btn1.setText("Welcome");
+		btn1.setText("Begin");
+		btn1.setFont(f2);
 		btn1.addActionListener(new ActionListener() {
 			 
             public void actionPerformed(ActionEvent e)
