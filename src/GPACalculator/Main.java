@@ -13,9 +13,11 @@ public class Main {
 		Student student = new Student("default");
 		System.out.println(student);
 		System.out.println(student.getSemester(1));
+		System.out.println(student.getSemester(9));
 		student.addSemester();
 		System.out.println(student);
 		System.out.println(student.getSemester(9));
-		
+		student.renameSemester("Changed", 1);
+		System.out.println(student);
 	}
 }

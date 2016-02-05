@@ -8,6 +8,7 @@ public class Student {
 
 	double[] semesterGrades;
 	double[] semesterHours;
+	String[] semesterNames;
 	Double totalHours;
 	Double qualityPoints;
 	Double totalGPA;
@@ -34,12 +35,15 @@ public class Student {
 			map = new HashMap<String, String>();
 			this.firstName = new String("New");
 			this.lastName = new String("Student");
+
 			this.semesterGrades = new double[8];
 			this.semesterHours = new double[8];
+			this.semesterNames = new String [] {"Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6", "Semester 7", "Semester 8"};
 			this.qualityPoints = new Double(0);
 			this.totalHours = new Double(0);
 			this.totalGPA = new Double(0);
 			this.numberOfSemesters = 8;
+	
 			semester1= new Semester(this.semesterGrades[0], 1);
 			map.put("1", semester1.toString());
 			semester2 = new Semester(this.semesterGrades[1], 2);
@@ -57,14 +61,15 @@ public class Student {
 			semester8 = new Semester(this.semesterGrades[7], 8);
 			map.put("8", semester8.toString());
 		}
-		
-	}
+	}	
+	
 	
 	 public String toString() { 
 		 System.out.println("Student: " + this.firstName + " " + this.lastName + ".");
          System.out.println("Semester GPAs: " + Arrays.toString(this.semesterGrades));
          System.out.println("Quality Points: " + Double.toString(this.qualityPoints));
          System.out.println("Total Hours: " + Double.toString(this.totalHours));
+         System.out.println(Arrays.toString(this.semesterNames));
          return "Total GPA: " + Double.toString(this.totalGPA);
       } 
 	 
@@ -83,8 +88,12 @@ public class Student {
 			 return map.get(Integer.toString(i));
 		 }
 		 else {
-			 return "No Semester Exists";
+			 return "Semester index out or range.";
 		 }
+	 }
+	 
+	 public void renameSemester(String text, int i) {
+		 this.semesterNames[i - 1] = text;
 	 }
 	 
 	 public void addSemester() {
@@ -113,9 +122,24 @@ public class Student {
 		 
 		 this.semesterGrades = b;
 		 
+		 String[] c = new String[this.numberOfSemesters];
+		 for (int i = 0; i < this.numberOfSemesters; i++){
+			 if (i < this.numberOfSemesters-1) {
+				 c[i] = this.semesterNames[i];
+			 }
+			 else {
+				 c[i] = "Semester " + Integer.toString(this.numberOfSemesters);
+			 }
+		 }
+		 
+		 this.semesterNames = c;
 		 Semester semester = new Semester(0, this.numberOfSemesters);
 		 
 		 map.put(Integer.toString(this.numberOfSemesters), semester.toString());
+		 
+	 }
+
+	 public void removeSemester() {
 		 
 	 }
 }
