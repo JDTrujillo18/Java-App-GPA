@@ -1,4 +1,4 @@
-package GPACalculator;
+package GPACalculator.student;
 
 public class Class {
 	

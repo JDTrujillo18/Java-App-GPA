@@ -1,4 +1,4 @@
-package GPACalculator;
+package GPACalculator.student;
 
 import java.util.Arrays;
 import java.util.HashMap;

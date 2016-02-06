@@ -1,10 +1,9 @@
 package GPACalculator;
 
 import GPACalculator.frames.MainFrame;
+import GPACalculator.student.Student;
 
 import java.util.Arrays;
-
-import GPACalculator.Student;
 
 public class Main {
 	public static void main(String[] args){

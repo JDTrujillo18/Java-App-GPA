@@ -6,17 +6,16 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import GPACalculator.classMenu;
-import GPACalculator.semesterMenu;
-import GPACalculator.studentMenu;
 import GPACalculator.classpanel.ClassPanel;
+import GPACalculator.classpanel.classMenu;
 import GPACalculator.semesterpanel.SemesterPanel;
+import GPACalculator.semesterpanel.semesterMenu;
 import GPACalculator.studentpanel.StudentPanel;
+import GPACalculator.studentpanel.studentMenu;
 import GPACalculator.welcomepanel.WelcomePanel;
 
 public class MainFrame extends JFrame {
@@ -48,9 +47,9 @@ public class MainFrame extends JFrame {
 	
 	public void showWelcomePanel(){
 		frame.setTitle("GPA Calculator - Welcome Panel");
-		 frame.add(new WelcomePanel(), BorderLayout.NORTH);
-		 frame.pack();
-		 frame.setVisible(true);
+		frame.add(new WelcomePanel(), BorderLayout.NORTH);
+		frame.pack();
+		frame.setVisible(true);
 	}
 	
 	public static void showStudentPanel(){

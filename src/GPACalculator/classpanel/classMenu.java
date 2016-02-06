@@ -1,4 +1,4 @@
-package GPACalculator;
+package GPACalculator.classpanel;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
