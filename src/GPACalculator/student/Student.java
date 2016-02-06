@@ -267,5 +267,5 @@ public class Student {
 		 mapSemesters.remove(Integer.toString(mapRemove2));
 		 mapSemesterObjects.remove(mapRemove);
 	 }
-	 
 }
+

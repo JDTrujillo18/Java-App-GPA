@@ -21,7 +21,7 @@ import GPACalculator.welcomepanel.WelcomePanel;
 public class MainFrame extends JFrame {
 	
 	private static JFrame frame;
-	
+	WelcomePanel WelcomePanel;
 	public MainFrame() {
 		// Create and set up the window.
 		super();
@@ -42,12 +42,12 @@ public class MainFrame extends JFrame {
 		//frame.setJMenuBar(new Menu_GPA_Gui());
 		// Add Panel to Frame
 		// Display the window.
-
+		WelcomePanel = new WelcomePanel();
 	}
 	
 	public void showWelcomePanel(){
 		frame.setTitle("GPA Calculator - Welcome Panel");
-		frame.add(new WelcomePanel(), BorderLayout.NORTH);
+		frame.add(WelcomePanel, BorderLayout.NORTH);
 		frame.pack();
 		frame.setVisible(true);
 	}

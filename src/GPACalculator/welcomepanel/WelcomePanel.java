@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
@@ -18,8 +19,10 @@ public class WelcomePanel extends JPanel {
 		//Initialize tabbed pane
 		//tabbedPane = new JTabbedPane();
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		//Set tabbed pane font
+		//Set tabbed pane fontj
 		this.setFont(f);
+		JLabel lblWelcome = new JLabel("GPA Calculator");
+		lblWelcome.setFont(f2);
 		JButton btn1 = new JButton();
 		btn1.setText("Begin");
 		btn1.setFont(f2);
@@ -31,6 +34,7 @@ public class WelcomePanel extends JPanel {
                 MainFrame.showStudentPanel();
             }
         });  
+		this.add(lblWelcome);
 		this.add(btn1);
 	}
 }
