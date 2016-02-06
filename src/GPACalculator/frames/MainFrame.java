@@ -22,6 +22,7 @@ public class MainFrame extends JFrame {
 	
 	private static JFrame frame;
 	WelcomePanel WelcomePanel;
+
 	public MainFrame() {
 		// Create and set up the window.
 		super();
@@ -30,10 +31,6 @@ public class MainFrame extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Font f = new Font("serif", Font.PLAIN, 36);
 		frame.setFont(f);
-		Container c = frame.getContentPane();
-		// adjust to need.
-		Dimension d = new Dimension(2250, 1200);
-		c.setPreferredSize(d);
 		
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/icon.png")));
 		// Add content to the window.
@@ -43,11 +40,14 @@ public class MainFrame extends JFrame {
 		// Add Panel to Frame
 		// Display the window.
 		WelcomePanel = new WelcomePanel();
+
 	}
 	
 	public void showWelcomePanel(){
+		Container c = frame.getContentPane();
 		frame.setTitle("GPA Calculator - Welcome Panel");
 		frame.add(WelcomePanel, BorderLayout.NORTH);
+		c.setPreferredSize(WelcomePanel.getPreferredSize());
 		frame.pack();
 		frame.setVisible(true);
 	}
@@ -57,6 +57,10 @@ public class MainFrame extends JFrame {
 		frame.setTitle("GPA Calculator - Student Panel");
 		frame.setJMenuBar(new studentMenu());
 		frame.add(new StudentPanel(), BorderLayout.NORTH);
+		Container c = frame.getContentPane();
+		// adjust to need.
+		Dimension d = new Dimension(2250, 1200);
+		c.setPreferredSize(d);
 		frame.pack();
 		frame.setVisible(true);
 	}
@@ -68,6 +72,10 @@ public class MainFrame extends JFrame {
 		frame.setTitle("GPA Calculator - Semester Panel");
 		frame.setJMenuBar(new semesterMenu(s));
 		frame.add(new SemesterPanel(s), BorderLayout.NORTH);
+		Container c = frame.getContentPane();
+		// adjust to need.
+		Dimension d = new Dimension(2250, 1200);
+		c.setPreferredSize(d);
 		frame.pack();
 		frame.setVisible(true);
 	}

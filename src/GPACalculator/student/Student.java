@@ -33,6 +33,7 @@ public class Student {
 		if (text == "custom") {
 			this.firstName = new String("New");
 			this.lastName = new String("Student");
+			System.out.println("New Custom Student Created.");
 		} 
 		else if (text == "default") {
 			mapSemesters = new HashMap<String, String>();
@@ -81,6 +82,7 @@ public class Student {
 			mapSemesterObjects.put("Semester 8", semester8);
 			
 			semesterempty = new Semester(0, 0, 0);
+			System.out.println("New Default Student created.");
 		}
 	}	
 	
@@ -96,11 +98,15 @@ public class Student {
 	 
 	 public String setFirstName(String first) {
 		 this.firstName = first;
+		 System.out.println(this.firstName);
+		 this.toString();
 		 return this.firstName;
 	 }
 	 
 	 public String setLastName(String last) {
 		 this.lastName = last;
+		 System.out.println(this.lastName);
+		 this.toString();
 		 return this.lastName;
 	 }
 	 
