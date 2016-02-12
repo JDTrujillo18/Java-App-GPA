@@ -3,6 +3,7 @@ package GPACalculator.frames;
 
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -31,7 +32,7 @@ public class MainFrame extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Font f = new Font("serif", Font.PLAIN, 36);
 		frame.setFont(f);
-		
+		frame.setBackground(Color.WHITE);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/icon.png")));
 		// Add content to the window.
 		//frame.add(new GPA_Gui(), BorderLayout.NORTH);
@@ -48,6 +49,7 @@ public class MainFrame extends JFrame {
 		frame.setTitle("GPA Calculator - Welcome Panel");
 		frame.add(WelcomePanel, BorderLayout.NORTH);
 		c.setPreferredSize(WelcomePanel.getPreferredSize());
+		c.setBackground(Color.WHITE);
 		frame.pack();
 		frame.setVisible(true);
 	}

@@ -17,8 +17,8 @@ public class Main {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
-		System.out.println(height);
-		System.out.println(width);
+		System.out.println("Screen height: " + height);
+		System.out.println("Screen width: " + width);
 
 	}
 }
