@@ -11,9 +11,9 @@ import javax.swing.JPopupMenu;
 import GPACalculator.frames.MainFrame;
 import GPACalculator.student.Student;
 
-public class PopUpDemo extends JPopupMenu {
+public class PopUpDemo3 extends JPopupMenu {
     JMenuItem anItem;
-    public PopUpDemo(String s, Student student){
+    public PopUpDemo3(String s, Student student){
     	Font f = new Font("serif", Font.PLAIN, 24);
         anItem = new JMenuItem("Edit " + s);
         anItem.addActionListener(new ActionListener(){
@@ -21,7 +21,7 @@ public class PopUpDemo extends JPopupMenu {
 				//EditClass_Gui.createAndShowGUI(s);
 				//GPA_Gui.makeInvisible();
 				//EditSemester_Gui.makeInvisible();
-				MainFrame.showClassPanel(s, student);
+				MainFrame.showSemesterPanel(s, student);
 			}
 		});
         anItem.setFont(f);

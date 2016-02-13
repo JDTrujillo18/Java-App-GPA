@@ -10,7 +10,7 @@ import javax.swing.SwingUtilities;
 
 import GPACalculator.student.Student;
 
-public class PopClickListener extends MouseAdapter {
+public class PopClickListener3 extends MouseAdapter {
 	
 
 	public static MouseListener createDialog(JLabel b, final String message, Student student) {
@@ -38,7 +38,7 @@ public class PopClickListener extends MouseAdapter {
 
     private static void doPop(MouseEvent e, String s, Student student){
     	//String s = new String("Class 1");
-        PopUpDemo menu = new PopUpDemo(s, student);
+        PopUpDemo3 menu = new PopUpDemo3(s, student);
         menu.show(e.getComponent(), e.getX(), e.getY());
     }
 }

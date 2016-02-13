@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import GPACalculator.buttontabcomponents.ButtonTabComponent2;
 import GPACalculator.buttontabcomponents.ButtonTabComponent3;
 import GPACalculator.buttontabcomponents.ButtonTabComponent4;
+import GPACalculator.student.Student;
 
 
 public class SemesterPanel extends JPanel{
@@ -30,7 +31,7 @@ public class SemesterPanel extends JPanel{
 	static JComponent pnlTree;
 	static String s2;
 		
-	public SemesterPanel(String s) {
+	public SemesterPanel(String s, Student student) {
 
 		super(new GridLayout(2, 1));
 		Dimension d1 = new Dimension(600, 1200);
@@ -39,7 +40,7 @@ public class SemesterPanel extends JPanel{
 		Dimension d4 = new Dimension(2250, 1200);
 
 		tabbedPane1 = new subSemesterPanel1(s);
-		tabbedPane2 = new subSemesterPanel2(s);
+		tabbedPane2 = new subSemesterPanel2(s, student);
 		tabbedPane3 = new subSemesterPanel3(s);
 			
 		pnlAll = new JPanel();
@@ -87,8 +88,8 @@ public class SemesterPanel extends JPanel{
 		return textPanel1;
 	}
 
-	protected static JComponent makeTextPanel2(String text) {
-		subSemesterTextPanel2 makeTextPanel2 = new subSemesterTextPanel2(text);
+	protected static JComponent makeTextPanel2(String text, Student student) {
+		subSemesterTextPanel2 makeTextPanel2 = new subSemesterTextPanel2(text, student);
 		return makeTextPanel2;
 	}
 		
@@ -110,10 +111,10 @@ public class SemesterPanel extends JPanel{
 		}  
 
 		
-	public final static void addSemester(String s) {
+	public final static void addSemester(String s, Student student) {
 
 		Font f = new Font("serif", Font.PLAIN, 24);
-		JComponent pnlSemester1 = makeTextPanel2(s);
+		JComponent pnlSemester1 = makeTextPanel2(s, student);
 		tabbedPane2.addTab(s , pnlSemester1);
 		tabbedPane2.setFont(f);
 		initTabComponent2(tabbedPane2.getTabCount() - 1);

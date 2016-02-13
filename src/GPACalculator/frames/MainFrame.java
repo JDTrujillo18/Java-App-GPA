@@ -69,13 +69,11 @@ public class MainFrame extends JFrame {
 		frame.setVisible(true);
 	}
 	
-	public static void showSemesterPanel() {
-		String s = new String();
-		s = "Semester 1";
+	public static void showSemesterPanel(String s, Student student) {
 		frame.getContentPane().removeAll();
 		frame.setTitle("GPA Calculator - Semester Panel");
 		frame.setJMenuBar(new semesterMenu(s));
-		frame.add(new SemesterPanel(s), BorderLayout.NORTH);
+		frame.add(new SemesterPanel(s, student), BorderLayout.NORTH);
 		Container c = frame.getContentPane();
 		// adjust to need.
 		Dimension d = new Dimension(2250, 1200);
@@ -84,13 +82,11 @@ public class MainFrame extends JFrame {
 		frame.setVisible(true);
 	}
 	
-	public static void showClassPanel() {
-		String s = new String();
-		s = "Class 1";
+	public static void showClassPanel(String s, Student student) {
 		frame.getContentPane().removeAll();
 		frame.setTitle("GPA Calculator - Class Panel");
 		frame.setJMenuBar(new classMenu());
-		frame.add(new ClassPanel(s), BorderLayout.NORTH);
+		frame.add(new ClassPanel(s, student), BorderLayout.NORTH);
 		Container c = frame.getContentPane();
 		// adjust to need.
 		Dimension d = new Dimension(2250, 1200);

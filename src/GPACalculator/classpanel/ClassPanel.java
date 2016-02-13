@@ -43,6 +43,7 @@ import GPACalculator.popups.PopClickListener2;
 import GPACalculator.semesterpanel.subSemesterTextPanel1;
 import GPACalculator.semesterpanel.subSemesterTextPanel2;
 import GPACalculator.semesterpanel.subSemesterTextPanel3;
+import GPACalculator.student.Student;
 
 public class ClassPanel extends JPanel {
 	private static JTabbedPane tabbedPane2;
@@ -59,7 +60,7 @@ public class ClassPanel extends JPanel {
 	static BufferedImage buttonIcon = null;
 	static BufferedImage buttonIcon3 = null;
 	
-	public ClassPanel(String s) {
+	public ClassPanel(String s, Student student) {
 		super(new GridLayout(2, 1));
 		Font f = new Font("serif", Font.PLAIN, 24);
 		Dimension d1 = new Dimension(600, 1200);
@@ -81,7 +82,7 @@ public class ClassPanel extends JPanel {
 		} 
 		
 		tabbedPane1 = new subClassPanel1(s);
-		tabbedPane2 = new subClassPanel2(s);
+		tabbedPane2 = new subClassPanel2(s, student);
 		tabbedPane3 = new subClassPanel3(s);
 
 		pnlAll = new JPanel();
@@ -129,8 +130,8 @@ public class ClassPanel extends JPanel {
 		return textPanel1;
 	}
 
-	protected static JComponent makeTextPanel2(String text) {
-		subSemesterTextPanel2 makeTextPanel2 = new subSemesterTextPanel2(text);
+	protected static JComponent makeTextPanel2(String text, Student student) {
+		subSemesterTextPanel2 makeTextPanel2 = new subSemesterTextPanel2(text, student);
 		return makeTextPanel2;
 	}
 	
@@ -154,12 +155,12 @@ public class ClassPanel extends JPanel {
 	static int semesterNumber = 9;
 	static String stringSemesterNumber = Integer.toString(semesterNumber);
 	
-	public final static void addClass() {
+	public final static void addClass(Student student) {
 		String stringSemesterNumber = "Semester #" + Integer.toString(semesterNumber);
 		// tabbedPane.add(stringSemesterNumber, new ScrollPane());
 
 		Font f = new Font("serif", Font.PLAIN, 24);
-		JComponent pnlSemester = makeTextPanel2(stringSemesterNumber);
+		JComponent pnlSemester = makeTextPanel2(stringSemesterNumber, student);
 		tabbedPane2.addTab(stringSemesterNumber, pnlSemester);
 		tabbedPane2.setFont(f);
 		initTabComponent(tabbedPane2.getTabCount() - 1);

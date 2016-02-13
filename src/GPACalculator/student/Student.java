@@ -10,7 +10,7 @@ public class Student {
 	int[] semesterHours;
 	String[] semesterNames;
 	Double totalHours;
-	Double qualityPoints;
+	double[] qualityPoints;
 	Double totalGPA;
 	int numberOfSemesters;
 	int totalSemesters;
@@ -44,7 +44,7 @@ public class Student {
 			this.semesterGrades = new double[8];
 			this.semesterHours = new int[8];
 			this.semesterNames = new String [] {"Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6", "Semester 7", "Semester 8"};
-			this.qualityPoints = new Double(0);
+			this.qualityPoints = new double[8];
 			this.totalHours = new Double(0);
 			this.totalGPA = new Double(0);
 			this.numberOfSemesters = 8;
@@ -90,7 +90,7 @@ public class Student {
 	 public String toString() { 
 		 System.out.println("Student: " + this.firstName + " " + this.lastName);
          System.out.println("Semester GPAs: " + Arrays.toString(this.semesterGrades));
-         System.out.println("Quality Points: " + Double.toString(this.qualityPoints));
+         System.out.println("Quality Points: " + Arrays.toString(this.qualityPoints));
          System.out.println("Total Hours: " + Double.toString(this.totalHours));
          System.out.println(Arrays.toString(this.semesterNames));
          return "Total GPA: " + Double.toString(this.totalGPA);
@@ -130,7 +130,7 @@ public class Student {
 		 return this.semesterNames;
 	 }
 	 
-	 public double getQualityPoints() {
+	 public double[] getQualityPoints() {
 		 return this.qualityPoints;
 	 }
 	 
@@ -221,6 +221,19 @@ public class Student {
 		 }
 		 
 		 this.semesterNames = c;
+		 
+		 double[] d = new double[this.numberOfSemesters];
+		 for (int i = 0; i < this.numberOfSemesters; i++) {
+			 if (i < this.numberOfSemesters - 1) {
+				 d[i] = this.qualityPoints[i];
+			 }
+			 else {
+				 d[i] = 0;
+			 }
+		 }
+		 
+		 this.qualityPoints = d;
+		 
 		 Semester semester = new Semester(0, this.totalSemesters, this.totalSemesters);
 		 
 		 mapSemesters.put(Integer.toString(this.totalSemesters), semester.toString());

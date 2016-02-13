@@ -21,10 +21,11 @@ import GPACalculator.frames.MainFrame;
 import GPACalculator.popups.PopClickListener;
 import GPACalculator.popups.PopClickListener2;
 import GPACalculator.semesterpanel.SemesterPanel;
+import GPACalculator.student.Student;
 
 public class subClassTextPanel2 extends JPanel{
 	
-	public subClassTextPanel2(String text) {
+	public subClassTextPanel2(String text, Student student) {
 //JPanel pnlDelete = new JPanel();
 		//pnlDelete.setLayout(new BoxLayout(pnlDelete, BoxLayout.Y_AXIS));
 		
@@ -116,7 +117,7 @@ public class subClassTextPanel2 extends JPanel{
 		
 		JLabel fillerClass1 = new JLabel("Class 1");
 		fillerClass1.setFont(f2);
-		fillerClass1.addMouseListener(PopClickListener.createDialog(fillerClass1, "Class 1"));
+		fillerClass1.addMouseListener(PopClickListener.createDialog(fillerClass1, "Class 1", student));
 		class1.add(fillerClass1);
 
 		JLabel class1Grade = new JLabel("Grade: 0");
@@ -147,7 +148,7 @@ public class subClassTextPanel2 extends JPanel{
 		
 		JLabel fillerClass2 = new JLabel("Class 2");
 		fillerClass2.setFont(f2);
-		fillerClass2.addMouseListener(PopClickListener.createDialog(fillerClass2, "Class 2"));
+		fillerClass2.addMouseListener(PopClickListener.createDialog(fillerClass2, "Class 2", student));
 		class2.add(fillerClass2);
 		
 		JLabel class2Grade = new JLabel("Grade: 0");
@@ -178,7 +179,7 @@ public class subClassTextPanel2 extends JPanel{
 		
 		JLabel fillerClass3 = new JLabel("Class 3");
 		fillerClass3.setFont(f2);
-		fillerClass3.addMouseListener(PopClickListener.createDialog(fillerClass3, "Class 3"));
+		fillerClass3.addMouseListener(PopClickListener.createDialog(fillerClass3, "Class 3", student));
 		class3.add(fillerClass3);
 
 		JLabel class3Grade = new JLabel("Grade: 0");
@@ -208,7 +209,7 @@ public class subClassTextPanel2 extends JPanel{
 		
 		JLabel fillerClass4 = new JLabel("Class 4");
 		fillerClass4.setFont(f2);
-		fillerClass4.addMouseListener(PopClickListener.createDialog(fillerClass4, "Class 4"));
+		fillerClass4.addMouseListener(PopClickListener.createDialog(fillerClass4, "Class 4", student));
 		class4.add(fillerClass4);
 		
 		JLabel class4Grade = new JLabel("Grade: 0");
@@ -238,7 +239,7 @@ public class subClassTextPanel2 extends JPanel{
 		
 		JLabel fillerClass5 = new JLabel("Class 5");
 		fillerClass5.setFont(f2);
-		fillerClass5.addMouseListener(PopClickListener.createDialog(fillerClass5, "Class 5"));
+		fillerClass5.addMouseListener(PopClickListener.createDialog(fillerClass5, "Class 5", student));
 		class5.add(fillerClass5);
 		
 		JLabel class5Grade = new JLabel("Grade: 0");
@@ -268,7 +269,7 @@ public class subClassTextPanel2 extends JPanel{
 		
 		JLabel fillerClass6 = new JLabel("Class 6");
 		fillerClass6.setFont(f2);
-		fillerClass6.addMouseListener(PopClickListener.createDialog(fillerClass6, "Class 6"));
+		fillerClass6.addMouseListener(PopClickListener.createDialog(fillerClass6, "Class 6", student));
 		class6.add(fillerClass6);
 		
 		JLabel class6Grade = new JLabel("Grade: 0");
@@ -298,7 +299,7 @@ public class subClassTextPanel2 extends JPanel{
 		
 		JLabel fillerClass7 = new JLabel("Class 7");
 		fillerClass7.setFont(f2);
-		fillerClass7.addMouseListener(PopClickListener.createDialog(fillerClass7, "Class 7"));
+		fillerClass7.addMouseListener(PopClickListener.createDialog(fillerClass7, "Class 7", student));
 		class7.add(fillerClass7);
 		
 		JLabel class7Grade = new JLabel("Grade: 0");
@@ -328,7 +329,7 @@ public class subClassTextPanel2 extends JPanel{
 		
 		JLabel fillerClass8 = new JLabel("Class 8");
 		fillerClass8.setFont(f2);
-		fillerClass8.addMouseListener(PopClickListener.createDialog(fillerClass8, "Class 8"));
+		fillerClass8.addMouseListener(PopClickListener.createDialog(fillerClass8, "Class 8", student));
 		class8.add(fillerClass8);
 
 		JLabel class8Grade = new JLabel("Grade: 0");
@@ -373,7 +374,7 @@ public class subClassTextPanel2 extends JPanel{
 		JButton btn1 = new JButton("Back");
 		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MainFrame.showSemesterPanel();
+				MainFrame.showSemesterPanel(student.getFirstName() + " " + student.getLastName(), student);
 			}
 		});
 		gpaTotal.add(btn1);
