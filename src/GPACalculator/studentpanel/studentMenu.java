@@ -42,7 +42,7 @@ import javax.swing.UIManager;
 		static final int semesterNumber = 8;
 		
 	    public studentMenu() {
-	    	Font fmenu = new Font("sans-serif", Font.PLAIN, 18);
+	    	Font fmenu = new Font("sans-serif", Font.PLAIN, 30);
 			UIManager.put("Menu.font", fmenu);
 			UIManager.put("MenuItem.font", fmenu);
 	        menuFile = new JMenu("File");

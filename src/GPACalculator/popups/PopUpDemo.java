@@ -11,7 +11,7 @@ import javax.swing.JPopupMenu;
 public class PopUpDemo extends JPopupMenu {
     JMenuItem anItem;
     public PopUpDemo(String s){
-    	Font f = new Font("serif", Font.PLAIN, 16);
+    	Font f = new Font("serif", Font.PLAIN, 24);
         anItem = new JMenuItem("Edit " + s);
         anItem.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent actionEvent) {

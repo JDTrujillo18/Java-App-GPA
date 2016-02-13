@@ -1,4 +1,6 @@
 package GPACalculator.semesterpanel;
+import java.awt.Font;
+
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -18,7 +20,7 @@ public class subSemesterTextPanel1 extends JPanel {
         JTree tree = new JTree(createNodes1);
         tree.getSelectionModel().setSelectionMode
                 (TreeSelectionModel.SINGLE_TREE_SELECTION);
- 
+        tree.setFont(new Font("serif", Font.PLAIN, 24));
         //Create the scroll pane and add the tree to it. 
         JScrollPane treeView = new JScrollPane(tree);
 		this.add(treeView);

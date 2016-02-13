@@ -2,6 +2,7 @@ package GPACalculator.buttontabcomponents;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.basic.BasicButtonUI;
 
 import java.awt.*;
@@ -38,6 +39,7 @@ public class ButtonTabComponent5 extends JPanel {
 		add(label);
 		// add more space between the label and the button
 		label.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 5));
+		label.setFont(new Font("serif", Font.PLAIN, 24));
 		// tab button
 		JButton button = new TabButton();
 		add(button);
@@ -71,7 +73,7 @@ public class ButtonTabComponent5 extends JPanel {
 			if (i != -1) {
 			    String title = "Confirm Delete";
 			    // display the JOptionPane showConfirmDialog
-
+			    UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font("sans-serif", Font.PLAIN, 32)));
 			    int reply = JOptionPane.showConfirmDialog(null, getPanel(), title, JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 			    
 			    if (reply == JOptionPane.OK_OPTION){
@@ -84,10 +86,16 @@ public class ButtonTabComponent5 extends JPanel {
 	        JPanel panel = new JPanel();
 	        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 	        JLabel label = new JLabel("This class will be removed from view, but not deleted.");
-	        JLabel confirm = new JLabel("         Confirm removal?");
+	        JLabel confirm = new JLabel("    Confirm removal?");
 	        JLabel empty = new JLabel("     ");
-	        JCheckBox checkBox = new JCheckBox("Don't show this message in the future");
-	        
+	        JCheckBox checkBox = new JCheckBox(" Don't show this message in the future");
+	        JLabel empty2 = new JLabel("     ");
+	        panel.setFont(new Font("serif", Font.PLAIN, 36));
+	        label.setFont(new Font("serif", Font.PLAIN, 36));
+	        confirm.setFont(new Font("serif", Font.PLAIN, 36));
+	        empty.setFont(new Font("serif", Font.PLAIN, 36));
+	        checkBox.setFont(new Font("serif", Font.PLAIN, 36));
+	        empty2.setFont(new Font("serif", Font.PLAIN, 36));
 	        BufferedImage image = null;
 			try {
 				image = ImageIO.read(new File(ButtonTabComponent.class.getResource("/images/question.png").toURI()));
@@ -99,14 +107,14 @@ public class ButtonTabComponent5 extends JPanel {
 				e1.printStackTrace();
 			}
 
-	        BufferedImage image2 = resize(image, 20, 20);
+	        BufferedImage image2 = resize(image, 30, 30);
 	        ImageIcon buttonIcon = new ImageIcon(image2);
 	        label.setIcon(buttonIcon);
 	        panel.add(label);
 	        panel.add(confirm);
 	        panel.add(empty);
 	        panel.add(checkBox);
-
+	        panel.add(empty2);
 	        return panel;
 	    }
 		

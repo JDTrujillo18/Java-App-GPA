@@ -118,7 +118,7 @@ public class classMenu extends JMenuBar{
 	
 	public classMenu() {
 		// Initialize Menus
-		Font fmenu = new Font("sans-serif", Font.PLAIN, 12);
+		Font fmenu = new Font("sans-serif", Font.PLAIN, 30);
 		UIManager.put("Menu.font", fmenu);
 		UIManager.put("MenuItem.font", fmenu);
 

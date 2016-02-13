@@ -1,4 +1,4 @@
-package GPACalculator.semesterpanel;
+package GPACalculator.classpanel;
 import java.awt.Font;
 
 import javax.swing.BoxLayout;
@@ -10,9 +10,9 @@ import javax.swing.tree.TreeSelectionModel;
 import GPACalculator.nodes.createNodes2;
 
 
-public class subSemesterTextPanel3 extends JPanel{
+public class subClassTextPanel3 extends JPanel{
 	
-	public subSemesterTextPanel3(String text) {
+	public subClassTextPanel3(String text) {
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		//Create the nodes.

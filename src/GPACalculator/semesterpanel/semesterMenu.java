@@ -55,7 +55,7 @@ public class semesterMenu extends JMenuBar {
 	JMenuItem menuItemSemester8SettingView;
 	
 	 public semesterMenu(String s) {
-		 Font fmenu = new Font("sans-serif", Font.PLAIN, 12);
+		 Font fmenu = new Font("sans-serif", Font.PLAIN, 30);
 			UIManager.put("Menu.font", fmenu);
 			UIManager.put("MenuItem.font", fmenu);
 			// Build the File menu.

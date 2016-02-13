@@ -89,6 +89,10 @@ public class MainFrame extends JFrame {
 		frame.setTitle("GPA Calculator - Class Panel");
 		frame.setJMenuBar(new classMenu());
 		frame.add(new ClassPanel(s), BorderLayout.NORTH);
+		Container c = frame.getContentPane();
+		// adjust to need.
+		Dimension d = new Dimension(2250, 1200);
+		c.setPreferredSize(d);
 		frame.pack();
 		frame.setVisible(true);
 	}
