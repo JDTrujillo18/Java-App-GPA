@@ -1,4 +1,5 @@
 package GPACalculator.semesterpanel;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -38,7 +39,6 @@ public class subSemesterTextPanel2 extends JPanel{
 		Dimension d2 = new Dimension(1350, 150);
 		Dimension d3 = new Dimension(1200, 900);
 		Dimension d4 = new Dimension(1200, 75);
-		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.setPreferredSize(d1);
 		
@@ -389,4 +389,6 @@ public class subSemesterTextPanel2 extends JPanel{
 		this.add(gpaSemester);
 		this.add(gpaTotal);
 	}
+	
+	
 }

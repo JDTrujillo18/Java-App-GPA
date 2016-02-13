@@ -4,15 +4,19 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.border.Border;
@@ -73,6 +77,7 @@ public class WelcomePanel extends JPanel {
 		btn1.setFont(f);
 		btn1.setForeground(Color.WHITE);
 		btn1.setBackground(Color.BLACK);
+		frame.getRootPane().setDefaultButton(btn1);
 		btn1.addActionListener(new ActionListener() {
 			 
             public void actionPerformed(ActionEvent e)

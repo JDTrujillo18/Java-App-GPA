@@ -1,5 +1,6 @@
 package GPACalculator.semesterpanel;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -34,6 +35,8 @@ public class SemesterPanel extends JPanel{
 	public SemesterPanel(String s, Student student) {
 
 		super(new GridLayout(2, 1));
+		Color backgroundColor = Color.WHITE;
+		this.setBackground(backgroundColor);
 		Dimension d1 = new Dimension(600, 1200);
 		Dimension d2 = new Dimension(1350, 1200);
 		Dimension d3 = new Dimension(300, 1200);

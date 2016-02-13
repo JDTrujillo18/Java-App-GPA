@@ -1,5 +1,7 @@
 package GPACalculator.classpanel;
 
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -970,4 +972,14 @@ public class classMenu extends JMenuBar{
 		menuSemester8ClassSettingView.add(menuItemSemester8Class7SettingsView);
 		menuSemester8ClassSettingView.add(menuItemSemester8Class8SettingsView);
 	}
+	
+    public void setFileChooserFont(Component[] comp) {
+    	Font font = new Font("sans-serif", Font.PLAIN, 24);
+      for(int x = 0; x < comp.length; x++) {
+        if(comp[x] instanceof Container) setFileChooserFont(((Container)comp[x]).getComponents());
+        try{comp[x].setFont(font);}
+        catch(Exception e){}//do nothing
+      }
+    }
+    
 }

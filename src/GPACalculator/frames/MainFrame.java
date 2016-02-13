@@ -4,12 +4,14 @@ package GPACalculator.frames;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import GPACalculator.classpanel.ClassPanel;
 import GPACalculator.classpanel.classMenu;
@@ -21,7 +23,7 @@ import GPACalculator.studentpanel.studentMenu;
 import GPACalculator.welcomepanel.WelcomePanel;
 
 public class MainFrame extends JFrame {
-	
+	static Color backgroundColor = Color.WHITE;
 	private static JFrame frame;
 	WelcomePanel WelcomePanel;
 	static StudentPanel studentPanel;
@@ -64,6 +66,7 @@ public class MainFrame extends JFrame {
 		frame.setJMenuBar(new studentMenu());
 		frame.add(studentPanel, BorderLayout.NORTH);
 		// adjust to need.
+		setPanelColor(c);
 		c.setPreferredSize(studentPanel.getPreferredSize());
 		frame.pack();
 		frame.setVisible(true);
@@ -75,6 +78,7 @@ public class MainFrame extends JFrame {
 		frame.setJMenuBar(new semesterMenu(s));
 		frame.add(new SemesterPanel(s, student), BorderLayout.NORTH);
 		Container c = frame.getContentPane();
+		setPanelColor(c);
 		// adjust to need.
 		Dimension d = new Dimension(2250, 1200);
 		c.setPreferredSize(d);
@@ -88,6 +92,7 @@ public class MainFrame extends JFrame {
 		frame.setJMenuBar(new classMenu());
 		frame.add(new ClassPanel(s, student), BorderLayout.NORTH);
 		Container c = frame.getContentPane();
+		setPanelColor(c);
 		// adjust to need.
 		Dimension d = new Dimension(2250, 1200);
 		c.setPreferredSize(d);
@@ -99,4 +104,21 @@ public class MainFrame extends JFrame {
 		frame.pack();
 		frame.setVisible(true);
 	}
+	
+	public static void setPanelColor(Container parent)
+	{
+	    for(Component c : parent.getComponents())
+	    {
+	        if(c instanceof Container)
+	        {
+	            if(c instanceof JPanel)
+	            {
+	                c.setBackground(backgroundColor);
+	            }
+
+	            setPanelColor((Container)c);
+	        }
+	    }
+	}
+	
 }

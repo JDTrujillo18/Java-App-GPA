@@ -1,4 +1,5 @@
 package GPACalculator.semesterpanel;
+import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.BoxLayout;
@@ -13,7 +14,6 @@ import GPACalculator.nodes.createNodes2;
 public class subSemesterTextPanel3 extends JPanel{
 	
 	public subSemesterTextPanel3(String text) {
-		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		//Create the nodes.
         createNodes2 createNodes2 = new createNodes2(text);

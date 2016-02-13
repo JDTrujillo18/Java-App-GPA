@@ -1,16 +1,22 @@
 package GPACalculator.semesterpanel;
 
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JComponent;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
+
 
  
 public class semesterMenu extends JMenuBar {
@@ -28,6 +34,7 @@ public class semesterMenu extends JMenuBar {
 	JMenuItem menuItemQuit;
 	JMenuItem menuItemNewStudent;
 	JMenuItem menuItemNewClass;
+	JMenuItem menuItemOpen;
 	JMenuItem menuItemSave;
 	JMenuItem menuItemSaveAs;
 	JMenuItem menuItemSaveAll;
@@ -101,11 +108,33 @@ public class semesterMenu extends JMenuBar {
 				}
 			});
 			
+			menuItemOpen = new JMenuItem("Open");
+			menuItemOpen.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
+			menuItemOpen.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent actionEvent) {
+					//Create a file chooser
+					JFrame frame = new JFrame("Save File");
+					final JFileChooser fc = new JFileChooser();
+					setFileChooserFont(fc.getComponents());
+					Dimension d1 = new Dimension(1350, 1200);
+			        fc.setPreferredSize(d1);
+					//In response to a button click:
+					int returnVal = fc.showOpenDialog(frame);
+				}
+			});
+			
 			menuItemSave = new JMenuItem("Save");
 			menuItemSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
 			menuItemSave.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent actionEvent) {
-					
+					//Create a file chooser
+					JFrame frame = new JFrame("Save File");
+					final JFileChooser fc = new JFileChooser();
+					setFileChooserFont(fc.getComponents());
+					Dimension d1 = new Dimension(1350, 1200);
+			        fc.setPreferredSize(d1);
+					//In response to a button click:
+					int returnVal = fc.showSaveDialog(frame);
 				}
 			});
 			
@@ -284,6 +313,7 @@ public class semesterMenu extends JMenuBar {
 			menuNew.add(menuItemNewStudent);
 			menuNew.add(menuItemNewClass);
 			menuFile.addSeparator();
+			menuFile.add(menuItemOpen);
 			menuFile.add(menuItemSave);
 			menuFile.add(menuItemSaveAs);
 			menuFile.add(menuItemSaveAll);
@@ -324,4 +354,13 @@ public class semesterMenu extends JMenuBar {
 			menuSemesterSettingsView.add(menuItemSemester8SettingView);
 			
 	 }
+	 
+	    public void setFileChooserFont(Component[] comp) {
+	    	Font font = new Font("sans-serif", Font.PLAIN, 24);
+	      for(int x = 0; x < comp.length; x++) {
+	        if(comp[x] instanceof Container) setFileChooserFont(((Container)comp[x]).getComponents());
+	        try{comp[x].setFont(font);}
+	        catch(Exception e){}//do nothing
+	      }
+	    }
 }
