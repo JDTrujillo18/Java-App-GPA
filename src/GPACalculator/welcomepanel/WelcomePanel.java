@@ -8,10 +8,17 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import javax.swing.border.Border;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.plaf.FontUIResource;
 
 import GPACalculator.TextPrompt;
 import GPACalculator.frames.MainFrame;
@@ -19,7 +26,7 @@ import GPACalculator.student.Student;
 
 public class WelcomePanel extends JPanel {
 
-	public WelcomePanel(){
+	public WelcomePanel(JFrame frame){
 		Color backgroundColor = Color.WHITE;
 		this.setBackground(backgroundColor);
 		Font f = new Font("serif", Font.PLAIN, 36);
@@ -52,7 +59,6 @@ public class WelcomePanel extends JPanel {
 		firstNamePrompt.changeAlpha(0.5f);
 		firstNamePrompt.changeStyle(Font.BOLD + Font.ITALIC);
 		firstName.setMaximumSize(new Dimension(300, 60));
-
 		
 		JTextField lastName = new JTextField(30);
 		lastName.setFont(f);
@@ -72,10 +78,19 @@ public class WelcomePanel extends JPanel {
             public void actionPerformed(ActionEvent e)
             {
                 //Execute when button is pressed
-                MainFrame.showStudentPanel();
-                Student student = new Student("default");
+            	if (firstName.getText().trim().isEmpty() || lastName.getText().trim().isEmpty()){
+            		System.out.println("Empty");
+            		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("serif", Font.PLAIN, 32)));
+            		UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font("sans-serif", Font.PLAIN, 28)));
+            		JOptionPane.showMessageDialog(frame, "Please enter a first and last name.", "Enter Full Name", JOptionPane.INFORMATION_MESSAGE);
+            	}
+            	else {
+            	Student student = new Student("default");
                 student.setFirstName(firstName.getText());
                 student.setLastName(lastName.getText());
+                MainFrame.showStudentPanel(student);
+                
+            	}
             }
         });
 		
@@ -89,10 +104,19 @@ public class WelcomePanel extends JPanel {
             public void actionPerformed(ActionEvent e)
             {
                 //Execute when button is pressed
-                MainFrame.showStudentPanel();
+            	if (firstName.getText().trim().isEmpty() || lastName.getText().trim().isEmpty()){
+            		System.out.println("Empty");
+            		UIManager.put("OptionPane.messageFont", new FontUIResource(new Font("serif", Font.PLAIN, 32)));
+            		UIManager.put("OptionPane.buttonFont", new FontUIResource(new Font("sans-serif", Font.PLAIN, 28)));
+            		JOptionPane.showMessageDialog(frame, "Please enter a first and last name.", "Enter Full Name", JOptionPane.INFORMATION_MESSAGE);
+            	}
+            	else{
                 Student student = new Student("custom");
                 student.setFirstName(firstName.getText());
                 student.setLastName(lastName.getText());
+                MainFrame.showStudentPanel(student);
+
+            	}
             }
         });
 		

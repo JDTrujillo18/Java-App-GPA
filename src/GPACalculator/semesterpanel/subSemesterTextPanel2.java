@@ -46,7 +46,7 @@ public class subSemesterTextPanel2 extends JPanel{
 		panel.setPreferredSize(d3);
 		
 		JPanel semester = new JPanel();
-		this.setPreferredSize(d2);
+		semester.setPreferredSize(d2);
 		
 		JPanel class1 = new JPanel();
 		class1.setLayout(new BoxLayout(class1, BoxLayout.X_AXIS));
@@ -81,7 +81,7 @@ public class subSemesterTextPanel2 extends JPanel{
 		
 		JPanel gpaTotal = new JPanel();
 		gpaTotal.setLayout(new BoxLayout(gpaTotal, BoxLayout.X_AXIS));
-		gpaSemester.setPreferredSize(d4);
+		gpaTotal.setPreferredSize(d4);
 		
 		BufferedImage buttonIcon = null;
 		try {

@@ -8,12 +8,15 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JTabbedPane;
 
+import GPACalculator.buttontabcomponents.ButtonTabComponent3;
+import GPACalculator.buttontabcomponents.ButtonTabComponent6;
 import GPACalculator.frames.MainFrame;
+import GPACalculator.student.Student;
 
 
 public class StudentPanel extends JTabbedPane {
-
-	public StudentPanel() {
+	
+	public StudentPanel(Student student) {
 		//Define Layout of frame
 		//super(new GridLayout(1, 1));
 				
@@ -28,27 +31,24 @@ public class StudentPanel extends JTabbedPane {
 				
 		//Set tabbed pane font
 		this.setFont(f);
-				//Initialize panels, add panels and set panel fonts
+		//Initialize panels, add panels and set panel fonts
 		//Initialize panel that the Semester 1 tab will hold
 		//Call makeTextPanel for this panel
-		JComponent pnlSemester1 = new tabStudentPanel("Student 1");
+		JComponent pnlSemester1 = new tabStudentPanel(student);
 		
-		JButton btn1 = new JButton();
-		btn1.setText("Click me");
-		btn1.addActionListener(new ActionListener() {
-			 
-            public void actionPerformed(ActionEvent e)
-            {
-                //Execute when button is pressed
-                MainFrame.showSemesterPanel();
-            }
-        }); 
-		
-		pnlSemester1.add(btn1);
 		//Add tab with panel
-		this.addTab("Semester 1", pnlSemester1);
+		this.addTab("Student: " + student.getFirstName() + " " + student.getLastName(), pnlSemester1);
 		//Set tab mnemonic
 		this.setMnemonicAt(0, KeyEvent.VK_1);
+		initTabComponent(0);
+		
+		Font f1 = new Font("serif", Font.PLAIN, 54);
+		Font f2 = new Font("serif", Font.PLAIN, 36);
+		
+	}
+	
+	private void initTabComponent(int i) {
+		this.setTabComponentAt(i, new ButtonTabComponent3(this));
 	}
 }
 

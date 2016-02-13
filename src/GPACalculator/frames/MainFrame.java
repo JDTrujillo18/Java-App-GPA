@@ -15,6 +15,7 @@ import GPACalculator.classpanel.ClassPanel;
 import GPACalculator.classpanel.classMenu;
 import GPACalculator.semesterpanel.SemesterPanel;
 import GPACalculator.semesterpanel.semesterMenu;
+import GPACalculator.student.Student;
 import GPACalculator.studentpanel.StudentPanel;
 import GPACalculator.studentpanel.studentMenu;
 import GPACalculator.welcomepanel.WelcomePanel;
@@ -23,6 +24,7 @@ public class MainFrame extends JFrame {
 	
 	private static JFrame frame;
 	WelcomePanel WelcomePanel;
+	static StudentPanel studentPanel;
 
 	public MainFrame() {
 		// Create and set up the window.
@@ -40,7 +42,7 @@ public class MainFrame extends JFrame {
 		//frame.setJMenuBar(new Menu_GPA_Gui());
 		// Add Panel to Frame
 		// Display the window.
-		WelcomePanel = new WelcomePanel();
+		WelcomePanel = new WelcomePanel(frame);
 
 	}
 	
@@ -54,15 +56,15 @@ public class MainFrame extends JFrame {
 		frame.setVisible(true);
 	}
 	
-	public static void showStudentPanel(){
+	public static void showStudentPanel(Student student){
+		studentPanel = new StudentPanel(student);
+		Container c = frame.getContentPane();
 		frame.getContentPane().removeAll();
 		frame.setTitle("GPA Calculator - Student Panel");
 		frame.setJMenuBar(new studentMenu());
-		frame.add(new StudentPanel(), BorderLayout.NORTH);
-		Container c = frame.getContentPane();
+		frame.add(studentPanel, BorderLayout.NORTH);
 		// adjust to need.
-		Dimension d = new Dimension(2250, 1200);
-		c.setPreferredSize(d);
+		c.setPreferredSize(studentPanel.getPreferredSize());
 		frame.pack();
 		frame.setVisible(true);
 	}

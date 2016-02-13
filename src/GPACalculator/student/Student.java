@@ -88,7 +88,7 @@ public class Student {
 	
 	
 	 public String toString() { 
-		 System.out.println("Student: " + this.firstName + " " + this.lastName + ".");
+		 System.out.println("Student: " + this.firstName + " " + this.lastName);
          System.out.println("Semester GPAs: " + Arrays.toString(this.semesterGrades));
          System.out.println("Quality Points: " + Double.toString(this.qualityPoints));
          System.out.println("Total Hours: " + Double.toString(this.totalHours));
