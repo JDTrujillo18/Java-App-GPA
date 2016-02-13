@@ -9,6 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -18,6 +23,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
+
+import GPACalculator.student.Student;
 
 
 	 
@@ -51,7 +58,7 @@ import javax.swing.UIManager;
 
 		static final int semesterNumber = 8;
 		
-	    public studentMenu() {
+	    public studentMenu(Student student) {
 	    	Font fmenu = new Font("sans-serif", Font.PLAIN, 30);
 			UIManager.put("Menu.font", fmenu);
 			UIManager.put("MenuItem.font", fmenu);
@@ -134,6 +141,26 @@ import javax.swing.UIManager;
 			        fc.setPreferredSize(d1);
 					//In response to a button click:
 					int returnVal = fc.showSaveDialog(frame);
+					
+					if (returnVal == JFileChooser.APPROVE_OPTION) {
+						   File file = fc.getSelectedFile();
+						   PrintWriter writer = null;
+							try {
+								writer = new PrintWriter(file, "UTF-8");
+							} catch (FileNotFoundException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (UnsupportedEncodingException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							writer.println("Student");
+							writer.println("First Name: " + student.getFirstName());
+							writer.println("Last Name: " + student.getLastName());
+							writer.println("Total Hours: " + student.getTotalHours());
+							writer.println("Total GPA: " + student.getTotalGPA());
+							writer.close();
+					}
 				}
 			});
 			

@@ -9,6 +9,9 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -63,13 +66,29 @@ public class MainFrame extends JFrame {
 		Container c = frame.getContentPane();
 		frame.getContentPane().removeAll();
 		frame.setTitle("GPA Calculator - Student Panel");
-		frame.setJMenuBar(new studentMenu());
+		frame.setJMenuBar(new studentMenu(student));
 		frame.add(studentPanel, BorderLayout.NORTH);
 		// adjust to need.
 		setPanelColor(c);
 		c.setPreferredSize(studentPanel.getPreferredSize());
 		frame.pack();
 		frame.setVisible(true);
+		PrintWriter writer = null;
+		try {
+			writer = new PrintWriter("testmyjavacode.txt", "UTF-8");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		writer.println("Student");
+		writer.println("First Name " + student.getFirstName());
+		writer.println("Last Name " + student.getLastName());
+		writer.println("Total Hours " + student.getTotalHours());
+		writer.println("Total GPA " + student.getTotalGPA());
+		writer.close();
 	}
 	
 	public static void showSemesterPanel(String s, Student student) {
