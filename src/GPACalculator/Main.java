@@ -29,6 +29,7 @@ public class Main {
 		System.out.println("Screen width: " + width);
 		
 		Student student = new Student("default");
+		student.setFirstName("Jered");
 		System.out.println(student.toString());
 	}
 }
