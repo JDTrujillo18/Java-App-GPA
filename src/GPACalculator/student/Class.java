@@ -41,8 +41,8 @@ public class Class {
 	String classCode;
 	String classTeacher;
 	
-	public Class(double classGrade, int classNumber, int classCount) {
-		this.className = "Class " + Integer.toString(classNumber);
+	public Class(Student student, Semester semester, double classGrade, int classNumber, int classCount) {
+		this.className = semester.semesterName + " Class " + Integer.toString(classNumber);
 		this.classCounter = classCount;
 		this.classCode = "";
 		this.classTeacher = "";
@@ -79,5 +79,11 @@ public class Class {
 		this.quizzesGrade = 0;
 		this.testsGrade = 0;
 		this.finalGrade = 0;
+		//System.out.println(this.className + " Grade: " + this.classGrade);
+	}
+	
+	public String toString() {
+		//System.out.println(this.className);
+		return this.className;
 	}
 }

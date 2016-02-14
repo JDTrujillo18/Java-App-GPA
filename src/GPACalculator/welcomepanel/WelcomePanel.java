@@ -93,6 +93,7 @@ public class WelcomePanel extends JPanel {
             	Student student = new Student("default");
                 student.setFirstName(firstName.getText());
                 student.setLastName(lastName.getText());
+                student.toString();
                 MainFrame.showStudentPanel(student);
                 
             	}

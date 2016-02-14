@@ -27,5 +27,8 @@ public class Main {
 		double height = screenSize.getHeight();
 		System.out.println("Screen height: " + height);
 		System.out.println("Screen width: " + width);
+		
+		Student student = new Student("default");
+		System.out.println(student.toString());
 	}
 }

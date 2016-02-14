@@ -49,39 +49,39 @@ public class Student {
 			this.totalGPA = new Double(0);
 			this.numberOfSemesters = 8;
 			this.totalSemesters = 8;
-			semester1= new Semester(this.semesterGrades[0], 1, 1);
+			semester1= new Semester(this, this.semesterGrades[0], 1, 1);
 			mapSemesters.put("1", semester1.toString());
 			mapSemesterObjects.put("Semester 1", semester1);
 			
-			semester2 = new Semester(this.semesterGrades[1], 2, 2);
+			semester2 = new Semester(this, this.semesterGrades[1], 2, 2);
 			mapSemesters.put("2", semester2.toString());
 			mapSemesterObjects.put("Semester 2", semester2);
 			
-			semester3= new Semester(this.semesterGrades[2], 3, 3);
+			semester3= new Semester(this, this.semesterGrades[2], 3, 3);
 			mapSemesters.put("3", semester3.toString());
 			mapSemesterObjects.put("Semester 3", semester3);
 			
-			semester4 = new Semester(this.semesterGrades[3], 4, 4);
+			semester4 = new Semester(this, this.semesterGrades[3], 4, 4);
 			mapSemesters.put("4", semester4.toString());
 			mapSemesterObjects.put("Semester 4", semester4);
 			
-			semester5= new Semester(this.semesterGrades[4], 5, 5);
+			semester5= new Semester(this, this.semesterGrades[4], 5, 5);
 			mapSemesters.put("5", semester5.toString());
 			mapSemesterObjects.put("Semester 5", semester5);
 			
-			semester6 = new Semester(this.semesterGrades[5], 6, 6);
+			semester6 = new Semester(this, this.semesterGrades[5], 6, 6);
 			mapSemesters.put("6", semester6.toString());
 			mapSemesterObjects.put("Semester 6", semester6);
 			
-			semester7= new Semester(this.semesterGrades[6], 7, 7);
+			semester7= new Semester(this, this.semesterGrades[6], 7, 7);
 			mapSemesters.put("7", semester7.toString());
 			mapSemesterObjects.put("Semester 7", semester7);
 			
-			semester8 = new Semester(this.semesterGrades[7], 8, 8);
+			semester8 = new Semester(this, this.semesterGrades[7], 8, 8);
 			mapSemesters.put("8", semester8.toString());
 			mapSemesterObjects.put("Semester 8", semester8);
 			
-			semesterempty = new Semester(0, 0, 0);
+			semesterempty = new Semester(this, 0, 0, 0);
 			System.out.println("New Default Student created.");
 		}
 	}	
@@ -93,7 +93,17 @@ public class Student {
          System.out.println("Quality Points: " + Arrays.toString(this.qualityPoints));
          System.out.println("Total Hours: " + Double.toString(this.totalHours));
          System.out.println(Arrays.toString(this.semesterNames));
-         return "Total GPA: " + Double.toString(this.totalGPA);
+         System.out.println("Total GPA: " + Double.toString(this.totalGPA));
+         for (int i=1; i <= this.numberOfSemesters; i++){
+        	 Semester semester = this.getSemesterObject(i);
+        	 for (int j=1; j <= semester.numberOfClasses; j++){
+        		 Class classx = semester.getClassObject(j);
+        		 System.out.println("Print " + classx.toString());
+        	 }
+        	 System.out.println("Print " + semester.toString());
+         }
+         
+         return "End";
       } 
 	 
 	 public String setFirstName(String first) {
@@ -234,7 +244,7 @@ public class Student {
 		 
 		 this.qualityPoints = d;
 		 
-		 Semester semester = new Semester(0, this.totalSemesters, this.totalSemesters);
+		 Semester semester = new Semester(this, 0, this.totalSemesters, this.totalSemesters);
 		 
 		 mapSemesters.put(Integer.toString(this.totalSemesters), semester.toString());
 		 mapSemesterObjects.put("Semester " + Integer.toString(this.totalSemesters), semester);
