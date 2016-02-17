@@ -24,6 +24,7 @@ import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 
+import GPACalculator.frames.MainFrame;
 import GPACalculator.student.Student;
 
 
@@ -78,6 +79,7 @@ import GPACalculator.student.Student;
 			menuItemQuit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
 			menuItemQuit.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent actionEvent) {
+					MainFrame.writeFile(student);
 					System.exit(0);
 				}
 			});

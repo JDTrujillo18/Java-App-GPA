@@ -14,6 +14,8 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 
+import GPACalculator.student.Student;
+
 
 public class classMenu extends JMenuBar{
 	JMenu menuFile;
@@ -118,7 +120,7 @@ public class classMenu extends JMenuBar{
 	JMenuItem menuItemSemester8Class7SettingsView;
 	JMenuItem menuItemSemester8Class8SettingsView;
 	
-	public classMenu() {
+	public classMenu(Student student) {
 		// Initialize Menus
 		Font fmenu = new Font("sans-serif", Font.PLAIN, 30);
 		UIManager.put("Menu.font", fmenu);

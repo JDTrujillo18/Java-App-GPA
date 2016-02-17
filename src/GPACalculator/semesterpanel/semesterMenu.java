@@ -17,6 +17,9 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 
+import GPACalculator.frames.MainFrame;
+import GPACalculator.student.Student;
+
 
  
 public class semesterMenu extends JMenuBar {
@@ -61,7 +64,7 @@ public class semesterMenu extends JMenuBar {
 	JMenuItem menuItemSemester7SettingView;
 	JMenuItem menuItemSemester8SettingView;
 	
-	 public semesterMenu(String s) {
+	 public semesterMenu(Student student) {
 		 Font fmenu = new Font("sans-serif", Font.PLAIN, 30);
 			UIManager.put("Menu.font", fmenu);
 			UIManager.put("MenuItem.font", fmenu);
@@ -101,7 +104,7 @@ public class semesterMenu extends JMenuBar {
 				}
 			});
 			
-			menuItemSemesterSettings = new JMenuItem(s + " Settings");
+			menuItemSemesterSettings = new JMenuItem(student.getFirstName() + " Settings");
 			menuItemSemesterSettings.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent actionEvent){
 					
@@ -158,6 +161,7 @@ public class semesterMenu extends JMenuBar {
 			menuItemQuit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
 			menuItemQuit.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent actionEvent) {
+					MainFrame.writeFile(student);
 					System.exit(0);
 				}
 			});
